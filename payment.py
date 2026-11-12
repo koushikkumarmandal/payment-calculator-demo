@@ -11,7 +11,7 @@ def calculate_discount(price: float, discount) -> float:
     if isinstance(discount, str):
         # Strip whitespace and optional percent sign.
         discount_clean = discount.strip()
-        if discount_clean.endswith('%'):
+        if discount_clean('%'):
             discount_clean = discount_clean[:-1]
         try:
             discount_float = float(discount_clean)
