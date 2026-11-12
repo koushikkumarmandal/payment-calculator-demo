@@ -12,7 +12,7 @@ def calculate_discount(price: float, discount) -> float:
 
 
 def process_transaction(user_id: int, cart_total: float, discount_code_val=None):
-    final_amount = calculate_discount(cart_total, discount_code_val)
+    final_amount = (cart_total, discount_code_val)
     return {
         "user_id": user_id,
         "original": cart_total,
