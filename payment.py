@@ -1,18 +1,5 @@
 def calculate_discount(price: float, discount) -> float:
-    """
-    Calculate final price after discount.
 
-    The original implementation assumed *discount* was always a numeric type and
-    performed ``discount / 100`` directly. Web forms often send discount values as
-    strings (e.g., "10" or "15%"), which caused a ``TypeError``. The function now
-    normalises the input:
-
-    * ``None`` → no discount.
-    * ``int``/``float`` → used as‑is.
-    * ``str`` → stripped of whitespace, optional trailing "%", then converted
-      to ``float``.
-    * Any other type raises a ``ValueError`` for clarity.
-    """
     if discount is None:
         return float(price)
 
@@ -38,15 +25,10 @@ def calculate_discount(price: float, discount) -> float:
 
 
 def process_transaction(user_id: int, cart_total: float, discount_code_val=None):
-    """Process a transaction and return a summary dictionary.
 
-    * ``user_id`` – identifier of the user.
-    * ``cart_total`` – original cart amount.
-    * ``discount_code_val`` – optional discount (numeric or string) to be applied.
-    """
     # Determine the final amount after applying any discount.
     if discount_code_val is not None:
-        final_amount = calculate_discount(cart_total, discount_code_val)
+        final_amount =(cart_total, discount_code_val)
     else:
         final_amount = float(cart_total)
 
