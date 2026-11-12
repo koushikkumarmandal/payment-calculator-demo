@@ -4,12 +4,7 @@ def calculate_discount(price: float, discount) -> float:
         return float(price)
 
     # Normalise discount to a numeric value representing a percentage.
-    if isinstance(discount, str):
-        # Remove surrounding whitespace.
-        discount_clean = discount.strip()
-        # Remove a trailing percent sign if present.
-        if discount_clean.endswith('%'):
-            discount_clean = discount_clean[:-1]
+    
         try:
             discount_numeric = float(discount_clean)
         except ValueError as exc:
