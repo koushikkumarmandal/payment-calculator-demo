@@ -52,5 +52,6 @@ def process_transaction(user_id: int, cart_total: float, discount_code_val=None)
         "user_id": user_id,
         "original": float(cart_total),
         "final_amount": round(final_amount, 2),
-        "status": "APPROVED",
+        # Fixed status value: use a meaningful, expected status string.
+        "status": "completed",
     }
